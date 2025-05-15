@@ -1,3 +1,4 @@
+
 const { 
     giftedId,
     removeFile
@@ -66,19 +67,17 @@ router.get('/', async (req, res) => {
             if (!fs.existsSync(authDir)) {
                 fs.mkdirSync(authDir, { recursive: true });
             }
-            
-            const logger = pino({level: 'silent'});
+
             const { state, saveCreds } = await useMultiFileAuthState(authDir);
 
             let Gifted = Gifted_Tech({
                 auth: {
                     creds: state.creds,
-                    keys: makeCacheableSignalKeyStore(state.keys, logger/*pino({ level: "fatal" }).child({ level: "fatal" })*/),
+                    keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
                 },
                 printQRInTerminal: false,
-                //logger: pino({ level: "fatal" }).child({ level: "fatal" }),
-                browser: Browsers.windows("chrome"),
-                // browser: Browsers.macOS("Safari")
+                logger: pino({ level: "fatal" }).child({ level: "fatal" }),
+                browser: Browsers.macOS("Safari")
             });
 
             if (!Gifted.authState.creds.registered) {
