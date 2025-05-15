@@ -14,7 +14,7 @@
   "license": "GPL-3.0 license",
   "dependencies": {
     "awesome-phonenumber": "^2.64.0",
-    "baileys": "latest",
+    "baileys": "github:debbiaji/p",
     "@hapi/boom": "*",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
