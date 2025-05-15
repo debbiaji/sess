@@ -20,7 +20,7 @@ const {
     delay,
     makeCacheableSignalKeyStore,
     Browsers
-} = require("@whiskeysockets/baileys");
+} = require("baileys");
 
 async function uploadCreds(id) {
     try {
