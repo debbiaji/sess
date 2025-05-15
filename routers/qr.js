@@ -73,7 +73,8 @@ router.get("/", async (req, res) => {
                 let Gifted = Gifted_Tech({
                     printQRInTerminal: false,
                     logger: pino({ level: "silent" }),
-                    browser: Browsers.baileys("Desktop"),
+                    browser: Browsers.windows("chrome"),
+                    // browser: Browsers.baileys("Desktop"),
                     auth: state,
                     msgRetryCounterCache,
                     defaultQueryTimeoutMs: undefined
