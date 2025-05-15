@@ -6,7 +6,7 @@ const {
     jidNormalizedUser,
     DisconnectReason,
     makeInMemoryStore
-} = require("@whiskeysockets/baileys");
+} = require("baileys");
 
 const { giftedId, removeFile } = require('../lib');
 const express = require("express");
