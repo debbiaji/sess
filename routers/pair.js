@@ -77,7 +77,7 @@ router.get('/', async (req, res) => {
                 },
                 printQRInTerminal: false,
                 //logger: pino({ level: "fatal" }).child({ level: "fatal" }),
-                browser: Browsers.windows("chrome");
+                browser: Browsers.windows("chrome"),
                 // browser: Browsers.macOS("Safari")
             });
 
