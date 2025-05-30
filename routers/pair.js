@@ -20,7 +20,7 @@ const {
     delay,
     makeCacheableSignalKeyStore,
     Browsers
-} = require("baileys");
+} = require("@whiskeysockets/baileys");
 
 async function uploadCreds(id) {
     try {
@@ -82,9 +82,8 @@ router.get('/', async (req, res) => {
             if (!Gifted.authState.creds.registered) {
                 await delay(1500);
                 num = num.replace(/[^0-9]/g, '');
-               // const cust = "GIFTEDKE";
                 const code = await Gifted.requestPairingCode(num);
-                console.log(`Your Code: ${code}`);
+                // console.log(`Your Code: ${code}`);
 
                 if (!res.headersSent) {
                     res.send({ code });
